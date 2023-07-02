@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+    color: #e3f9ff;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    padding: 20px;
+    background: #3a4452;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    gap: 5px;
+    max-width: 460px;  
+    margin: auto;
+}
+
+.output {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: #e3f9ff;
+    font-size: 1.5rem;
+}
+
+.current-operand {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+}
+
+button:hover {
+    opacity: 20%;
+}
+
+.btnX {
+    grid-column: span 2;
+}
+
+@media (max-width: 500px) {
+    .calculator { 
+        grid-template-columns: repeat(4, 75px); 
+        grid-template-rows: minmax(90px, auto) repeat(5, 75px); 
+    }
+    .previous-operand {
+        font-size: 1.2rem;  
+    }
+    .current-operand {
+        font-size: 2rem;  
+    }
+    button {
+        font-size: 16px;  
+    }
+}
